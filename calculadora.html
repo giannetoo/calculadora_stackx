@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1>Gianfranco Marcucci</h1>
+    <div class="main-container">
+      <div class="calculator">
+        <input type="text" disabled id="display" />
+        <div class="box-buttons">
+          <button onclick="clean()">C</button>
+          <button onclick="back()">&lt;</button>
+          <button onclick="insertToDisplay('/')">/</button>
+          <button onclick="insertToDisplay('*')">*</button>
+          <button onclick="insertToDisplay('7')">7</button>
+          <button onclick="insertToDisplay('8')">8</button>
+          <button onclick="insertToDisplay('9')">9</button>
+          <button onclick="insertToDisplay('-')">-</button>
+          <button onclick="insertToDisplay('4')">4</button>
+          <button onclick="insertToDisplay('5')">5</button>
+          <button onclick="insertToDisplay('6')">6</button>
+          <button onclick="insertToDisplay('+')">+</button>
+          <button onclick="insertToDisplay('1')">1</button>
+          <button onclick="insertToDisplay('2')">2</button>
+          <button onclick="insertToDisplay('3')">3</button>
+          <button class="btn-zero" onclick="insertToDisplay('0')">0</button>
+          <button onclick="insertToDisplay('.')">.</button>
+          <button class="btn-result" onclick="result()">=</button>
+        </div>
+      </div>
+      <div class="history-container">
+        <h2>Histórico</h2>
+        <div class="history-controls">
+          <button onclick="clearHistory()">Limpar Histórico</button>
+        </div>
+        <div class="history-table-container">
+          <table id="historyTable">
+            <thead>
+              <tr>
+                <th>Operação</th>
+                <th>Resultado</th>
+              </tr>
+            </thead>
+            <tbody id="historyBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

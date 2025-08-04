@@ -1,0 +1,181 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #1c1b1b;
+  overflow-x: auto;
+}
+
+h1 {
+  color: white;
+}
+
+.calculator {
+  background-color: white;
+  width: 300px;
+  min-width: 300px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+#display {
+  width: 100%;
+  box-sizing: border-box;
+  height: 60px;
+  border: none;
+  border-radius: 6px;
+  background-color: #d3d1d1;
+  text-align: right;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.box-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  height: 60px;
+  border-radius: 6px;
+  font-size: 20px;
+}
+button:hover {
+  background-color: #e1e1e1;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.btn-zero {
+  grid-column: 1 / 3;
+}
+
+.btn-result {
+  grid-row: 4 / 6;
+  height: 100%;
+  grid-column: 4;
+}
+
+.main-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: nowrap;
+  min-width: fit-content;
+}
+
+.history-container {
+  background-color: white;
+  width: 400px;
+  min-width: 400px;
+  border-radius: 10px;
+  padding: 20px;
+  max-height: 500px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.history-container h2 {
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.history-controls {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.history-controls button {
+  background-color: #ff4757;
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  height: 28px;
+}
+
+.history-controls button:hover {
+  background-color: #ff3742;
+}
+
+.history-table-container {
+  overflow-y: auto;
+  flex: 1;
+}
+
+#historyTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#historyTable th,
+#historyTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#historyTable th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+}
+
+#historyTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#historyTable tr:hover {
+  background-color: #e9e9e9;
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calculator,
+  .history-container {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .calculator,
+  .history-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  button {
+    height: 50px;
+    font-size: 16px;
+  }
+
+  #display {
+    height: 50px;
+    font-size: 18px;
+  }
+}
